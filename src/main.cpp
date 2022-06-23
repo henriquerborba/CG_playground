@@ -22,7 +22,12 @@ void renderseta()
 // Deve-se manter essa fun��o com poucas linhas de codigo.
 void render()
 {
-   CV::text(20, 500, "Programa Demo Canvas2D");
+   // translada o eixo da tela para o centro da tela
+   CV::translate(screenWidth / 2, screenHeight / 2);
+   // desenha os eixos x e y
+   CV::line(0, -screenWidth / 2, 0, screenWidth / 2);
+   CV::line(-screenHeight / 2, 0, screenHeight / 2, 0);
+   CV::color(0);
 }
 
 // funcao chamada toda vez que uma tecla for pressionada.
