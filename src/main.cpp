@@ -14,9 +14,6 @@ using namespace std;
 int screenWidth = 800, screenHeight = 800; // largura e altura inicial da tela . Alteram com o redimensionamento de tela.
 int mouseX, mouseY;                        // variaveis globais do mouse para poder exibir dentro da render().
 
-void renderseta()
-{
-}
 // funcao chamada continuamente. Deve-se controlar o que desenhar por meio de variaveis globais
 // Todos os comandos para desenho na canvas devem ser chamados dentro da render().
 // Deve-se manter essa fun��o com poucas linhas de codigo.
