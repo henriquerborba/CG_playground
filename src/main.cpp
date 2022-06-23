@@ -14,15 +14,8 @@ using namespace std;
 int screenWidth = 800, screenHeight = 800; // largura e altura inicial da tela . Alteram com o redimensionamento de tela.
 int mouseX, mouseY;                        // variaveis globais do mouse para poder exibir dentro da render().
 
-// 1.	Elabore um algoritmo para fazer um veículo, representado por uma seta com 3 linhas (figura), andar no espaço 2D com o uso de setas direcionais (direita e esquerda).
-
-vector<Vector2> seta = {Vector2(0, 0), Vector2(200, 200), Vector2(200, 150), Vector2(150, 200)};
-
 void renderseta()
 {
-   CV::line(seta[0], seta[1]);
-   CV::line(seta[1], seta[3]);
-   CV::line(seta[1], seta[2]);
 }
 // funcao chamada continuamente. Deve-se controlar o que desenhar por meio de variaveis globais
 // Todos os comandos para desenho na canvas devem ser chamados dentro da render().
@@ -30,8 +23,6 @@ void renderseta()
 void render()
 {
    CV::text(20, 500, "Programa Demo Canvas2D");
-   CV::color(0, 0, 0);
-   renderseta();
 }
 
 // funcao chamada toda vez que uma tecla for pressionada.
@@ -40,29 +31,17 @@ void keyboard(int key)
    printf("\nTecla: %d", key);
    switch (key)
    {
+   // seta para esquerda
    case 200:
-      for (int i = 0; i < seta.size(); i++)
-      {
-         seta[i].x -= 1;
-      }
       break;
+   // seta para cima
    case 201:
-      for (int i = 0; i < seta.size(); i++)
-      {
-         seta[i].y += 1;
-      }
       break;
+   // seta para direita
    case 202:
-      for (int i = 0; i < seta.size(); i++)
-      {
-         seta[i].x += 1;
-      }
       break;
+   // seta para baixo
    case 203:
-      for (int i = 0; i < seta.size(); i++)
-      {
-         seta[i].y -= 1;
-      }
       break;
    }
 }
