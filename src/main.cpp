@@ -1,128 +1,89 @@
-/*********************************************************************
-// Canvas para desenho, criada sobre a API OpenGL. Nao eh necessario conhecimentos de OpenGL para usar.
-//  Autor: Cesar Tadeu Pozzer
-//         05/2020
-//
-//  Pode ser utilizada para fazer desenhos, animacoes, e jogos simples.
-//  Tem tratamento de mouse e teclado
-//  Estude o OpenGL antes de tentar compreender o arquivo gl_canvas.cpp
-//
-//  Versao 2.0
-//
-//  Instru��es:
-//	  Para alterar a animacao, digite numeros entre 1 e 3
-// *********************************************************************/
-
 #include <GL/glut.h>
 #include <GL/freeglut_ext.h> //callback da wheel do mouse.
 
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <vector>
 
-#include "gl_canvas2d.h"
+#include "canvas/gl_canvas2d.h"
 #include "Vector2.h"
 
+using namespace std;
 
-//variavel global para selecao do que sera exibido na canvas.
-int opcao  = 50;
-int screenWidth = 500, screenHeight = 500; //largura e altura inicial da tela . Alteram com o redimensionamento de tela.
-int mouseX, mouseY; //variaveis globais do mouse para poder exibir dentro da render().
+int screenWidth = 800, screenHeight = 800; // largura e altura inicial da tela . Alteram com o redimensionamento de tela.
+int mouseX, mouseY;                        // variaveis globais do mouse para poder exibir dentro da render().
 
-Vector2 p1 = Vector2(0, 0);
-Vector2 p2 = Vector2(0, 100);
-Vector2 p3 = Vector2(100, 100);
-Vector2 p4 = Vector2(100, 0);
+// 1.	Elabore um algoritmo para fazer um veículo, representado por uma seta com 3 linhas (figura), andar no espaço 2D com o uso de setas direcionais (direita e esquerda).
 
-void renderCurva(Vector2 p1, Vector2 p2, Vector2 p3)
+vector<Vector2> seta = {Vector2(0, 0), Vector2(200, 200), Vector2(200, 150), Vector2(150, 200)};
+
+void renderseta()
 {
-    CV::color(255, 0, 0);
-    for(float t = 0; t < 1; t+=0.001)
-    {
-            float xt = p1.x * (1 - t) * (1 - t) + p2.x * (2 * t * (1-t))  + p3.x * t * t;
-            float yt = p1.y * (1 - t) * (1 - t) + p2.y * (2 * t * (1 - t)) + p3.y * t * t;
-            CV::point(xt, yt);
-    }
-
+   CV::line(seta[0], seta[1]);
+   CV::line(seta[1], seta[3]);
+   CV::line(seta[1], seta[2]);
 }
-
-void renderCurva2(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4)
-{
-    CV::color(0, 0, 0);
-    for(float t = 0; t < 1; t+= 0.001)
-    {
-        Vector2 p = p1 * pow(1 - t, 3) + p2 * 3 * t * pow(1 - t, 2) + p3 * pow(t, 2) * (1 - t) + p4 * pow(t, 3);
-
-        CV::point(p);
-
-    }
-
-}
-
-void blendingFunction()
-{
-    CV::color(0, 0, 255);
-    float b0, b1, b2, b3;
-    for(float t = 0; t < 1; t += 0.0001)
-    {
-        b0 = pow(1-t,3);
-        b1 = 3 * t * pow(1-t, 2);
-        b2 = 3 * pow(t, 2) * (1 - t);
-        b3 = pow(t, 3);
-        CV::point(t * 100,  b0 * 100);
-        CV::point(t * 100,  b1 * 100);
-        CV::point(t * 100,  b2 * 100);
-        CV::point(t * 100,  b3 * 100);
-
-    }
-
-
-
-}
-
-
-
-
-//funcao chamada continuamente. Deve-se controlar o que desenhar por meio de variaveis globais
-//Todos os comandos para desenho na canvas devem ser chamados dentro da render().
-//Deve-se manter essa fun��o com poucas linhas de codigo.
+// funcao chamada continuamente. Deve-se controlar o que desenhar por meio de variaveis globais
+// Todos os comandos para desenho na canvas devem ser chamados dentro da render().
+// Deve-se manter essa fun��o com poucas linhas de codigo.
 void render()
 {
-   CV::text(20,500,"Programa Demo Canvas2D");
-   blendingFunction();
-
+   CV::text(20, 500, "Programa Demo Canvas2D");
+   CV::color(0, 0, 0);
+   renderseta();
 }
 
-//funcao chamada toda vez que uma tecla for pressionada.
+// funcao chamada toda vez que uma tecla for pressionada.
 void keyboard(int key)
 {
-   printf("\nTecla: %d" , key);
-   if( key < 200 )
+   printf("\nTecla: %d", key);
+   switch (key)
    {
-      opcao = key;
+   case 200:
+      for (int i = 0; i < seta.size(); i++)
+      {
+         seta[i].x -= 1;
+      }
+      break;
+   case 201:
+      for (int i = 0; i < seta.size(); i++)
+      {
+         seta[i].y += 1;
+      }
+      break;
+   case 202:
+      for (int i = 0; i < seta.size(); i++)
+      {
+         seta[i].x += 1;
+      }
+      break;
+   case 203:
+      for (int i = 0; i < seta.size(); i++)
+      {
+         seta[i].y -= 1;
+      }
+      break;
    }
-
 }
 
-//funcao chamada toda vez que uma tecla for liberada
+// funcao chamada toda vez que uma tecla for liberada
 void keyboardUp(int key)
 {
-   printf("\nLiberou: %d" , key);
+   printf("\nLiberou: %d", key);
 }
 
-//funcao para tratamento de mouse: cliques, movimentos e arrastos
+// funcao para tratamento de mouse: cliques, movimentos e arrastos
 void mouse(int button, int state, int wheel, int direction, int x, int y)
 {
-   mouseX = x; //guarda as coordenadas do mouse para exibir dentro da render()
+   mouseX = x; // guarda as coordenadas do mouse para exibir dentro da render()
    mouseY = y;
-   p3.set(x, y);
 
-   printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
+   printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction, x, y);
 }
 
 int main(void)
 {
-
 
    CV::init(&screenWidth, &screenHeight, "Titulo da Janela: Canvas 2D - Pressione 1, 2, 3");
    CV::run();
