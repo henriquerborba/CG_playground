@@ -150,9 +150,9 @@
 1426372440 g:\meu drive\cg\demos\playground\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1654001065 g:\meu drive\cg\demos\playground\src\vector2.h
+1656607633 g:\meu drive\cg\demos\playground\src\vector2.h
 
-1655951055 source:g:\meu drive\cg\demos\playground\src\main.cpp
+1656609514 source:g:\meu drive\cg\demos\playground\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -160,13 +160,15 @@
 	<stdlib.h>
 	<vector>
 	"canvas/gl_canvas2d.h"
+	"Matrix/matrix.h"
 	"Vector2.h"
+	"Vector3.h"
 
-1655950652 source:g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.cpp
+1655957765 source:g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1655951156 g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.h
+1655957765 g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -174,4 +176,19 @@
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	"../Vector2.h"
+
+1656606365 g:\meu drive\cg\demos\playground\src\matrix\matrix.h
+	<iostream>
+	"../vector2.h"
+	"../Vector3.h"
+
+1656594757 g:\meu drive\cg\demos\playground\src\vector3.h
+	<math.h>
+
+1656606441 source:g:\meu drive\cg\demos\playground\src\matrix\matrix.cpp
+	<stdexcept>
+	<iostream>
+	<iomanip>
+	<math.h>
+	"matrix.h"
 
