@@ -152,3 +152,22 @@
 
 1659062941 g:\meu drive\cg\demos\playground\src\vector2.h
 
+1659068105 source:g:\meu drive\cg\demos\playground\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<vector>
+	"gl_canvas2d.h"
+	"Vector2.h"
+
+1658511204 g:\meu drive\cg\demos\playground\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+

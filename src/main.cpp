@@ -31,12 +31,7 @@ int opcao = 50;
 int screenWidth = 500, screenHeight = 500; // largura e altura inicial da tela . Alteram com o redimensionamento de tela.
 int mouseX, mouseY;                        // variaveis globais do mouse para poder exibir dentro da render().
 
-Vector2 p1 = Vector2(0, 0);
-Vector2 p2 = Vector2(0, 100);
-Vector2 p3 = Vector2(100, 100);
-Vector2 p4 = Vector2(100, 0);
-
-vector<Vector2> pontos = {p1, p2, p3, p4};
+vector<Vector2> points;
 
 int factorial(int number)
 {
@@ -89,7 +84,7 @@ void blendingFunction()
 void render()
 {
     CV::text(20, 500, "Programa Demo Canvas2D");
-    bezierCurve(pontos);
+    bezierCurve(points);
 }
 
 // funcao chamada toda vez que uma tecla for pressionada.
@@ -113,7 +108,11 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 {
     mouseX = x; // guarda as coordenadas do mouse para exibir dentro da render()
     mouseY = y;
-    // p3.set(x, y);
+
+    if (button == 0 && state == 1)
+    {
+        points.push_back(Vector2(x, y));
+    }
 
     printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction, x, y);
 }
