@@ -120,3 +120,35 @@
 	<GL/freeglut_ext.h>
 	"../Vector2.h"
 
+1658511204 source:g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1658511204 g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"../Vector2.h"
+
+1426372440 g:\meu drive\cg\demos\playground\include\gl\glut.h
+	"freeglut_std.h"
+
+1437579942 g:\meu drive\cg\demos\playground\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1426372440 g:\meu drive\cg\demos\playground\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1659062941 g:\meu drive\cg\demos\playground\src\vector2.h
+
