@@ -120,18 +120,18 @@
 	<GL/freeglut_ext.h>
 	"../Vector2.h"
 
-1658511204 source:g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.cpp
+1659246722 source:g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1658511204 g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.h
+1659246625 g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	<string.h>
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
-	"../Vector2.h"
+	"../vectors/Vector2.h"
 
 1426372440 g:\meu drive\cg\demos\playground\include\gl\glut.h
 	"freeglut_std.h"
@@ -152,15 +152,16 @@
 
 1659062941 g:\meu drive\cg\demos\playground\src\vector2.h
 
-1659068105 source:g:\meu drive\cg\demos\playground\src\main.cpp
+1659300255 source:g:\meu drive\cg\demos\playground\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
 	<stdio.h>
 	<stdlib.h>
 	<vector>
-	"gl_canvas2d.h"
-	"Vector2.h"
+	"canvas/gl_canvas2d.h"
+	"vectors/Vector2.h"
+	"point/point.h"
 
 1658511204 g:\meu drive\cg\demos\playground\src\gl_canvas2d.h
 	<stdio.h>
@@ -170,4 +171,15 @@
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	"Vector2.h"
+
+1659247835 g:\meu drive\cg\demos\playground\src\vectors\vector2.h
+	<iostream>
+	<math.h>
+
+1659249521 g:\meu drive\cg\demos\playground\src\point\point.h
+	"../vectors/Vector2.h"
+
+1659249549 source:g:\meu drive\cg\demos\playground\src\point\point.cpp
+	"./point.h"
+	"../canvas/gl_canvas2d.h"
 

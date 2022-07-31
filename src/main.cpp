@@ -21,8 +21,9 @@
 #include <stdlib.h>
 #include <vector>
 
-#include "gl_canvas2d.h"
-#include "Vector2.h"
+#include "canvas/gl_canvas2d.h"
+#include "vectors/Vector2.h"
+#include "point/point.h"
 
 using namespace std;
 
@@ -31,7 +32,9 @@ int opcao = 50;
 int screenWidth = 500, screenHeight = 500; // largura e altura inicial da tela . Alteram com o redimensionamento de tela.
 int mouseX, mouseY;                        // variaveis globais do mouse para poder exibir dentro da render().
 
-vector<Vector2> points;
+vector<Point> points;
+
+int selected = -1;
 
 int factorial(int number)
 {
@@ -45,7 +48,7 @@ int factorial(int number)
 }
 
 // função que desenha uma curva de bezier dado um vetor de pontos.
-void bezierCurve(vector<Vector2> pontos)
+void bezierCurve(vector<Point> pontos)
 {
     CV::color(0, 0, 0);
     int n = pontos.size() - 1;
@@ -85,6 +88,11 @@ void render()
 {
     CV::text(20, 500, "Programa Demo Canvas2D");
     bezierCurve(points);
+
+    for (auto p : points)
+    {
+        p.draw();
+    }
 }
 
 // funcao chamada toda vez que uma tecla for pressionada.
@@ -109,9 +117,36 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
     mouseX = x; // guarda as coordenadas do mouse para exibir dentro da render()
     mouseY = y;
 
+    // clique com o botão esquerdo do mouse
+    if (button == 0 && state == 0)
+    {
+        if (points.empty())
+        {
+            points.push_back(Point(Vector2(x, y)));
+        }
+
+        for (int i = 0; i < points.size(); i++)
+        {
+            if (points[i].isInside(x, y))
+            {
+                selected = i;
+            }
+        }
+
+        if (selected == -1)
+        {
+            points.push_back(Point(Vector2(x, y)));
+        }
+    }
+
+    if (selected != -1)
+    {
+        points[selected].set(Vector2(x, y));
+    }
+
     if (button == 0 && state == 1)
     {
-        points.push_back(Vector2(x, y));
+        selected = -1;
     }
 
     printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction, x, y);

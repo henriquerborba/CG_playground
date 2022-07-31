@@ -1,6 +1,9 @@
 #ifndef __VECTOR_2_H__
 #define __VECTOR_2_H__
 
+#include <iostream>
+#include <math.h>
+
 class Vector2
 {
 public:
@@ -29,7 +32,7 @@ public:
 
         if (norm == 0.0)
         {
-            printf("\n\nNormalize::Divisao por zero");
+            std::cout << "Error: Vector2::normalize() - norm == 0.0 \n";
             x = 1;
             y = 1;
             return;
