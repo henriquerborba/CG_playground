@@ -10,7 +10,7 @@
 	<string.h>
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
-	"Vector2.h"
+	"Vector.h"
 
 1426372440 d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\include\gl\glut.h
 	"freeglut_std.h"
@@ -29,7 +29,7 @@
 1426372440 d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1589217858 d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\src\vector2.h
+1589217858 d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\src\Vector.h
 
 1603975055 source:d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\src\main.cpp
 	<GL/glut.h>
@@ -68,7 +68,7 @@
 	<string.h>
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
-	"Vector2.h"
+	"Vector.h"
 
 1426372440 g:\meu drive\cg\demos\gl_1_canvasglut\include\gl\glut.h
 	"freeglut_std.h"
@@ -87,7 +87,7 @@
 1426372440 g:\meu drive\cg\demos\gl_1_canvasglut\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1654001065 g:\meu drive\cg\demos\gl_1_canvasglut\src\vector2.h
+1654001065 g:\meu drive\cg\demos\gl_1_canvasglut\src\Vector.h
 
 1589218349 source:g:\meu drive\cg\demos\gl_1_canvasglut\src\relogio.cpp
 	"Relogio.h"
@@ -105,7 +105,7 @@
 	<stdio.h>
 	<stdlib.h>
 	"gl_canvas2d.h"
-	"Vector2.h"
+	"Vector.h"
 
 1652716549 source:g:\meu drive\cg\demos\gl_1_canvasglut\src\canvas\gl_canvas2d.cpp
 	"gl_canvas2d.h"
@@ -118,7 +118,7 @@
 	<string.h>
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
-	"../Vector2.h"
+	"../Vector.h"
 
 1589222603 source:g:\meu drive\cg\demos\playground\src\gl_canvas2d.cpp
 	"gl_canvas2d.h"
@@ -131,7 +131,7 @@
 	<string.h>
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
-	"Vector2.h"
+	"Vector.h"
 
 1426372440 g:\meu drive\cg\demos\playground\include\gl\glut.h
 	"freeglut_std.h"
@@ -150,28 +150,31 @@
 1426372440 g:\meu drive\cg\demos\playground\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1654001065 g:\meu drive\cg\demos\playground\src\vector2.h
+1654001065 g:\meu drive\cg\demos\playground\src\Vector.h
 
-1655951055 source:g:\meu drive\cg\demos\playground\src\main.cpp
+1660809392 source:g:\meu drive\cg\demos\playground\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
 	<stdio.h>
 	<stdlib.h>
 	<vector>
+	<iostream>
 	"canvas/gl_canvas2d.h"
-	"Vector2.h"
+	"Vector.h"
 
-1655950652 source:g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.cpp
+1660808800 source:g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1655951156 g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.h
+1660808472 g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	<string.h>
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
-	"../Vector2.h"
+	"../Vector.h"
+
+1660808409 g:\meu drive\cg\demos\playground\src\vector.h
 

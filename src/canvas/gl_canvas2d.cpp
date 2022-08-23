@@ -54,7 +54,7 @@ void CV::point(float x, float y)
    glEnd();
 }
 
-void CV::point(Vector2 p)
+void CV::point(Vector p)
 {
    glBegin(GL_POINTS);
    glVertex2d(p.x, p.y);
@@ -69,7 +69,7 @@ void CV::line(float x1, float y1, float x2, float y2)
    glEnd();
 }
 
-void CV::line(Vector2 p1, Vector2 p2)
+void CV::line(Vector p1, Vector p2)
 {
    glBegin(GL_LINES);
    glVertex2d(p1.x, p1.y);
@@ -96,7 +96,7 @@ void CV::rectFill(float x1, float y1, float x2, float y2)
    glVertex2d(x2, y1);
    glEnd();
 }
-void CV::rectFill(Vector2 p1, Vector2 p2)
+void CV::rectFill(Vector p1, Vector p2)
 {
    glBegin(GL_QUADS);
    glVertex2d(p1.x, p1.y);
@@ -190,7 +190,7 @@ void CV::translate(float offsetX, float offsetY)
    glTranslated(offsetX, offsetY, 0);
 }
 
-void CV::translate(Vector2 offset)
+void CV::translate(Vector offset)
 {
    glMatrixMode(GL_MODELVIEW);
    glLoadIdentity();
@@ -199,7 +199,7 @@ void CV::translate(Vector2 offset)
 
 void CV::color(float r, float g, float b)
 {
-   glColor3f(r / 255, g / 255, b / 255);
+   glColor3f(r, g, b);
 }
 
 void CV::color(int idx)
