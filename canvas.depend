@@ -150,7 +150,7 @@
 1426372440 g:\meu drive\cg\demos\playground\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1654001065 g:\meu drive\cg\demos\playground\src\vector2.h
+1661238413 g:\meu drive\cg\demos\playground\src\vector2.h
 
 1655951055 source:g:\meu drive\cg\demos\playground\src\main.cpp
 	<GL/glut.h>
@@ -162,11 +162,11 @@
 	"canvas/gl_canvas2d.h"
 	"Vector2.h"
 
-1655950652 source:g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.cpp
+1661238413 source:g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1655951156 g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.h
+1661238413 g:\meu drive\cg\demos\playground\src\canvas\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>

@@ -43,10 +43,13 @@
 			<Add library="../lib/libopengl32.a" />
 			<Add library="../lib/freeglut.lib" />
 		</Linker>
+		<Unit filename="include/GL/freeglut.h" />
+		<Unit filename="include/GL/freeglut_ext.h" />
+		<Unit filename="include/GL/freeglut_std.h" />
 		<Unit filename="include/GL/glut.h" />
-		<Unit filename="src/Vector2.h" />
-		<Unit filename="src/gl_canvas2d.cpp" />
-		<Unit filename="src/gl_canvas2d.h" />
+		<Unit filename="src/Vector.h" />
+		<Unit filename="src/canvas/gl_canvas2d.cpp" />
+		<Unit filename="src/canvas/gl_canvas2d.h" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
